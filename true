@@ -1,0 +1,141 @@
+[1591549669.780][INFO]: Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 33240
+[1591549669.780][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1591549670.184][INFO]: [accc430a951e9e59706fa39714ec9dd0] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         }
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      }
+   }
+}
+[1591549670.194][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1591549670.195][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1591549670.212][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --load-extension="C:\Users\beyha\AppData\Local\Temp\scoped_dir25424_1759994940\internal" --log-level=0 --no-first-run --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\beyha\AppData\Local\Temp\scoped_dir25424_616749018" data:,
+[1591549671.006][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1591549673.032][INFO]: [accc430a951e9e59706fa39714ec9dd0] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "83.0.4103.97",
+      "chrome": {
+         "chromedriverVersion": "83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416})",
+         "userDataDir": "C:\\Users\\beyha\\AppData\\Local\\Temp\\scoped_dir25424_616749018"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:53143"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "accc430a951e9e59706fa39714ec9dd0"
+}
+[1591549673.039][INFO]: [accc430a951e9e59706fa39714ec9dd0] COMMAND MaximizeWindow {
+
+}
+[1591549673.039][INFO]: Waiting for pending navigations...
+[1591549673.042][INFO]: Done waiting for pending navigations. Status: ok
+[1591549673.043][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1591549675.170][INFO]: Waiting for pending navigations...
+[1591549675.172][INFO]: Done waiting for pending navigations. Status: ok
+[1591549675.172][INFO]: [accc430a951e9e59706fa39714ec9dd0] RESPONSE MaximizeWindow {
+   "height": 744,
+   "width": 1382,
+   "x": -8,
+   "y": -8
+}
+[1591549675.178][INFO]: [accc430a951e9e59706fa39714ec9dd0] COMMAND SetTimeouts {
+   "implicit": 10000
+}
+[1591549675.178][INFO]: [accc430a951e9e59706fa39714ec9dd0] RESPONSE SetTimeouts
+[1591549675.184][INFO]: [accc430a951e9e59706fa39714ec9dd0] COMMAND Navigate {
+   "url": "http://166.62.36.207/humanresources/symfony/web/index.php/auth/login"
+}
+[1591549675.184][INFO]: Waiting for pending navigations...
+[1591549675.185][INFO]: Done waiting for pending navigations. Status: ok
+[1591549675.842][INFO]: Waiting for pending navigations...
+[1591549676.846][INFO]: Done waiting for pending navigations. Status: ok
+[1591549676.846][INFO]: [accc430a951e9e59706fa39714ec9dd0] RESPONSE Navigate
