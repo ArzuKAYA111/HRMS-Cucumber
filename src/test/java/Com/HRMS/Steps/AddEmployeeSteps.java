@@ -8,7 +8,7 @@
 //import io.cucumber.java.en.When;
 //
 //public class AddEmployeeSteps extends CommonMethods{
-//	
+	
 //	@Given("user logged in into HRMS")
 //	public void user_logged_in_into_HRMS() {
 //	   
@@ -20,7 +20,7 @@
 //	@When("user enters employees first name and last name")
 //	public void user_enters_employees_first_name_and_last_name() {
 //	   
-//		addEmp.sendCredantials("Mehmet", "Aydin","Saglam");
+//		addEmp.sendCredantials("Adem", "Ahmet","Aydin");
 //		
 //	}
 //
@@ -35,7 +35,7 @@
 //	public void employee_is_added_successfully() {
 //	   
 //	String actual=	pdetails.profilname.getText();
-//	String expected="Mehmet Aydin Saglam";
+//	String expected="Adem Ahmet Aydin";
 //	Assert.assertEquals("Name did not match",expected, actual);
 //	
 //	}
@@ -55,7 +55,7 @@
 //
 //	@When("user enters  login credentials")
 //	public void user_enters_login_credentials() {
-//		addEmp.createloginDetails("Mehmet_saglam_Aydin", "Mehmetm@AydinU2_@34");  
+//		addEmp.createloginDetails("Ahmet_Adem_Aydin", "Ademm@AydinU2_@34");  
 //		wait(2);
 //		
 //	}

@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
@@ -57,7 +58,16 @@ public static void clickRadioOrCheckbox(List<WebElement> radioOrcheckbox,String 
 	}
 	
 }
-/**
+
+
+
+
+
+
+
+
+
+/**3-
  * This method gets the table row values
  * @param element
  */
@@ -73,7 +83,9 @@ public static void Tablerows(List<WebElement> element) {
 		System.out.println(rowText);
 	}
 }
-/**
+
+
+/**4-
  * this method gets the table colms values
  * @param element
  */
@@ -86,8 +98,64 @@ public static void Tablerows(List<WebElement> element) {
 	String colText=col.getText();//get text of each cell.
 		System.out.println(colText);
 	}}
+	
+	public void handlingTable(List<WebElement> rows ,List<WebElement> cols ) {
+		
+//	List<WebElement> rows = driver.findElements(By.xpath("//div[contains(@class, 'su-table')]/table/tbody/tr"));
+//	int rowNums = rows.size();
+//	System.out.println("Total row number is " + rowNums);
+//
+//	List<WebElement> cols = driver.findElements(By.xpath("//div[contains(@class, 'su-table')]/table/tbody/tr[1]/td"));
+//	int colNums = cols.size();
+//	System.out.println("Total number of cols is " + colNums);
 
-/**3-
+	for (int i = 1; i <= rows.size(); i++) {
+		for (int j = 1; j <= cols.size(); j++) {
+			WebElement cellData = driver.findElement(By.xpath("//div[contains(@class, 'su-table')]/table/tbody/tr[" + i + "]/td[" + j + "]"));
+			String cellDataText = cellData.getText();
+			//System.out.println(cellDataText);
+			
+			if(j == 2) {
+				System.out.println("colmnTwo.."+cellDataText);
+			}
+		}
+		System.out.println("....");
+	}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	public void clickTableElement(String expectedElement, List<WebElement> tableData) {
+//		boolean flag = false;
+//		while (!flag) {
+//			for (int i = 1; i < tableData.size(); i++) {
+//				String cellData = tableData.get(i - 1).getText();
+//				if (cellData.equals(expectedElement)) {
+//					flag = true;
+//					BaseClass.driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr[" + i + "]/td[3]/a")).click();
+//					break;
+//				}
+//			}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+/**5-
  * Method that check Drop Down if a specific text is there and then select it
  * @param element
  * @param textToSelect
@@ -112,7 +180,7 @@ public static void selectDdValue(WebElement element,String textToSelect) {
 		
 	}
 }
-/**4-
+/**6-
  * Method that check Drop down if a specific index is there and then select it
  * @param element
  * @param index
@@ -157,7 +225,7 @@ public static void selectDdValue(WebElement element, int index)	{//  Benim Yapti
 		}
 }
 // HM try to create method ByValue
-/**
+/**7-
  *Method that check Drop down if a specific Value  is there and then select it Select Drop Down By Value 
  * @param element
  * @param value
@@ -186,7 +254,7 @@ public static void selectDdByValue(WebElement element,String value) {// bu metho
 
 
 
-/**5-
+/**8-
  * methods that accept alerts and catches exception if alert is not present
  */
 
@@ -201,7 +269,7 @@ public static void acceptAlert() {
 }
 
 }
-/**6-
+/**9-
  * methods that dismiss alerts and catches exception if alert is not present
  * @return
  */
@@ -213,7 +281,7 @@ public static void dismissAlert() {
 		e.getStackTrace();
 	}
 }
-/**7-
+/**10-
  * methods that get text of  alert and catches exception if alert is not present
  * @return
  */
@@ -227,7 +295,7 @@ public static String getAlertText() {
 	}
 	return alertText;
 }
-/**8-
+/**11-
  * methods that get text of  alert and catches exception if alert is not present
  * @return
  */
@@ -242,7 +310,7 @@ public static String getAlertText() {
 				e.printStackTrace();
 		}
 		}
-	/**9-
+	/**12-
 	 * method that is  used to switch to Frame by name or id 
 	 * @param nameOrid
 	 */
@@ -255,7 +323,7 @@ public static String getAlertText() {
 		}
 		
 	}
-	/** 10-
+	/**13-
 	 * method that is  used to switch to Frame by WebElement
 	 * @param nameOrid
 	 */
@@ -268,7 +336,7 @@ try {
 		}
 
 	}
-	/** 11- 
+	/** 14- 
 	 * method that is  used to switch to Frame by index
 	 * @param nameOrid
 	 */
@@ -281,7 +349,7 @@ try {
 				}
 
 			}
-	/**12 
+	/**15
 	 * Method switches focus to child window
 	 */
 	public static void switchToChildWindow() {
@@ -304,9 +372,8 @@ try {
 	
 	
 	
-	// Methods for EXplicit Wait
-	/**13-
-	 * 
+	/**16-
+	 * Methods for EXplicit Wait
 	 * @return wait
 	 */
 	public static WebDriverWait getWaitObject() {
@@ -317,7 +384,7 @@ try {
 	
 	
 	
-	/**14-
+	/**17-
 	 * 
 	 * @param element
 	 * @return 
@@ -328,7 +395,9 @@ try {
 	return getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
-	/**Wait for element to visibility
+	/**
+	 * 18-
+	 * Wait for element to visibility
 	 * 
 	 * @param element
 	 * @return
@@ -341,7 +410,7 @@ try {
 	}
 
 	
-	/**15-
+	/**19-
 	 * 
 	 * @param element
 	 */
@@ -351,7 +420,7 @@ try {
 	WaitForClickability(element);
 	element.click();
 	}
-	/**
+	/**20-
 	 * 
 	 * @return js
 	 */
@@ -360,7 +429,7 @@ try {
 		return js;
 	}
 	
-	/**
+	/**21-
 	 * 
 	 * @param element
 	 */
@@ -368,7 +437,7 @@ try {
 		getJSObject().executeScript("arguments[0].click();", element);
 	}
 	
-	/**
+	/**22-
 	 * 
 	 * @param element
 	 */
@@ -377,7 +446,7 @@ try {
 	
 	
 }
-	/**
+	/**23-
 	 * Method that will scroll the page down based on the passed pixel parameters
 	 * @param pixel
 	 */
@@ -385,7 +454,7 @@ try {
 		getJSObject().executeScript("window.scrollBy(0,"+pixel+")");
 	}
 	
-		/**
+		/**24-
 		 *  Method that will scroll the page up based on the passed pixel parameters
 		 * @param pixel
 		 */
@@ -394,13 +463,17 @@ try {
 			
 		}
 		
-		/**
+		/**25-
 		 * This Method will take a screenshot
 		 * 
 		 * @param filename
 		 */
-		public static String takeScreenshot(String filename) {
+		public static byte[] takeScreenshot(String filename) {
 			TakesScreenshot ts = (TakesScreenshot) driver;
+			byte[] picBytes=ts.getScreenshotAs(OutputType.BYTES);
+			
+			
+			
 			File file = ts.getScreenshotAs(OutputType.FILE);
 			String destinationFile=Constants.SCREENSHOT_FILEPATH + filename+ getTimeStemp()+ ".png";
 			
@@ -409,9 +482,10 @@ try {
 			} catch (Exception ex) {
 				System.out.println("Cannot take screenshot!");
 			}
-			return destinationFile;
+			return picBytes;
 		}
-public static String getTimeStemp() {
+		
+ public static String getTimeStemp() {
 	Date date=new Date();
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
 	
@@ -421,7 +495,7 @@ public static String getTimeStemp() {
 		
 		
 		
-		/**
+		/**26-
 		 * method wait for specific seconds
 		 * @param second
 		 * @throws InterruptedException
@@ -437,6 +511,111 @@ public static String getTimeStemp() {
 
 	
 	}
-
+	
+/**-
+ * method gets data from exel and store into list of map
+ */
+//	public static void fromExcelToMap() {
+//		
+//		
+//	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\Excel\\HRMSdata.xlsx";
+//	
+//	FileInputStream fis;
+//	
+//	try {
+//		fis = new FileInputStream(filePath);
+//	} catch (FileNotFoundException e) {
+//		
+//		e.printStackTrace();
+//	}
+//
+//	 Workbook book;
+//	try {
+//		book = new XSSFWorkbook(fis);
+//	} catch (IOException e) {
+//		
+//		e.printStackTrace();
+//	}
+//	Sheet sheet = book.getSheet("Sheet1");
+//	
+//	int rows=sheet.getPhysicalNumberOfRows();
+//	int cols =sheet.getRow(0).getLastCellNum();
+//	
+//	List<Map<String, String>> listMap=new ArrayList<>();
+//	
+//	for(int r=1; r<rows; r++) {
+//		
+//		Map<String, String> map=new LinkedHashMap<>();
+//		
+//		for(int c=0; c<cols; c++) {
+//			
+//			String key=sheet.getRow(0).getCell(c).toString();
+//			String value=sheet.getRow(r).getCell(c).toString();
+//			map.put(key, value);
+//		}
+//		
+//		listMap.add(map);	
+//	}
+//	System.out.println(listMap);
+//
+//}
+	
+	/**
+	 * meyhod reads excel file data 
+	 * 
+	 */
+//	public static void readExel() {
+//		
+//
+//		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\Excel\\HRMSdata.xlsx";
+//
+//		FileInputStream fis;
+//		try {
+//			fis = new FileInputStream(filePath);
+//		} catch (FileNotFoundException e) {
+//			
+//			e.printStackTrace();
+//		}
+//
+//		// get an Object of Workbook type
+//		Workbook book;
+//		try {
+//			book = new XSSFWorkbook(fis);
+//		} catch (IOException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		Sheet sheet = book.getSheet("Sheet1");
+//
+//		// need to find numbers or rows
+//		int rows = sheet.getPhysicalNumberOfRows();
+//		
+//System.out.println(rows);
+//
+//		// find number of columns
+//		int cols = sheet.getRow(0).getLastCellNum();  
+//		
+//System.out.println(cols);
+//
+//		// get data from all rows and all columns
+//		for (int r = 0; r < rows; r++) {// iterates over rows
+//			for (int c = 0; c < cols; c++) {// iterates over cols
+//				String cellVal = sheet.getRow(r).getCell(c).toString();
+//				
+//				System.out.print(cellVal + "  ");
+//			}
+//			System.out.println();
+//			System.out.println();
+//		}
+//	}
+//		
+//		
+	
+	
+	
+	
+	
+	
+	
 }
 

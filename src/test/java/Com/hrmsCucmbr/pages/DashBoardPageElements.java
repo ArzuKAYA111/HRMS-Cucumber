@@ -1,5 +1,7 @@
 package Com.hrmsCucmbr.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -44,6 +46,10 @@ public class DashBoardPageElements extends CommonMethods {// To create useable m
 
 	@FindBy(id = "btnSave")
 	public WebElement BtnSave;
+	
+	@FindBy(xpath = "//div[@class='menu']/ul/li")
+	public List< WebElement > dashMenu;
+	
 
 	public DashBoardPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
@@ -54,5 +60,13 @@ public class DashBoardPageElements extends CommonMethods {// To create useable m
 		jsClick(addemp); //  We created method to click elements what defind in that class so we willl calll taha method in Test
 	
 	}
+	
+	public void navigateToEmployeeList() {
+		jsClick(PIM);
+		jsClick(empListPage); //  We created method to click elements what defind in that class so we willl calll taha method in Test
+	
+	}
+	
+	
 
 }

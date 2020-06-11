@@ -45,14 +45,20 @@ public class AddEmployeePageElements extends CommonMethods{
 		PageFactory.initElements(BaseClass.driver, this);
 	}
 	
-	public void sendCredantials( String name, String Midname, String Lname) {
+	
+	
+	public void sendCredantials( String name, String Midname, String Lname) {// for send first ,middle ,last
 		sendText(empfirstnme,name);
 		sendText(midlname,Midname);
 		sendText(lastnme,Lname);
 	
 	}
 
+	public void sendCredantials1( String name,String Lname) {// for enter name last name
+		sendText(empfirstnme,name);
+		sendText(lastnme,Lname);
 	
+	}
 	public void createloginDetails( String Username, String Password) {
 		sendText(username, Username);
 		sendText(userpassword,Password);

@@ -1,9 +1,13 @@
 package Com.HRMS.Steps;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 
 import Com.hrmsCucmbr.Utils.CommonMethods;
 import Com.hrmsCucmbr.Utils.ConfigsReader;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,12 +15,12 @@ import io.cucumber.java.en.When;
 public class LoginSteps  extends CommonMethods{
 
 
-//	@Given("user is logged with valid admin credentials")
-//	public void user_is_logged_with_valid_admin_credentials() {
-//	  sendText(login.username, ConfigsReader.getProperty("username"));
-//	  sendText(login.password, ConfigsReader.getProperty("password"));
-//	  click(login.loginBtn);
-//	}
+	@Given("user is logged with valid admin credentials")
+	public void user_is_logged_with_valid_admin_credentials() {
+	  sendText(login.username, ConfigsReader.getProperty("username"));
+	  sendText(login.password, ConfigsReader.getProperty("password"));
+	  click(login.loginBtn);
+	}
 
 	@When("user enter valid admin username and password")
 	public void user_enter_valid_admin_username_and_password() {
@@ -52,14 +56,84 @@ public class LoginSteps  extends CommonMethods{
 	
 	}
 
-	@When("User enter valid username and invalid password")
+	@When("user enter valid username and invalid password")
 	public void user_enter_valid_username_and_invalid_password() {
 		 sendText(login.username, "Gince123");
 		 sendText(login.password, "Syntax123.....");
 	}
 
-	@Then("User see Invalid Credentials text on login page")
+	@Then("user see Invalid Credentials text on login page")
 	public void user_see_Invalid_Credentials_text_on_login_page() {
+		String expectederrmasage="Invalid credentials";
+		String actualerrMasage=login.errorMsg.getText();
+		Assert.assertEquals("Error message did not match", expectederrmasage, actualerrMasage);
+		wait(2);
+		
+	}
+	
+	@When("user enter valid {string} and {string}")
+	public void user_enter_valid_and(String Username, String password) {
+	  
+		sendText(login.username, Username);
+		  sendText(login.password, password);
+		
+	}
+	
+	
+	
+	@Then("{string} is successfully loged in")
+	public void is_successfully_loged_in(String string) {
+	   
+		
+		
+		
+	}
+
+	@When("user enter invalid {string} or {string}")
+	public void user_enter_invalid_or(String Username, String Password) {
 	    
 	}
-}
+
+	@Then("user see {string}")
+	public void user_see(String ErrorMessage) {
+	   
+		
+		
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	@Then("{string} is successfully logged in")
+	public void is_successfully_logged_in(String Firstname) {
+	   System.out.println(Firstname + " is succesfully loged in");
+	}
+	
+	
+		
+		@When("I enter invalid username and password and see error message")
+		public void i_enter_invalid_username_and_password_and_see_error_message(DataTable inavalidCredentials) {
+			
+			List<Map<String, String>> list = inavalidCredentials.asMaps();
+			for(Map<String, String> map:list) {
+				sendText(login.username, map.get("UserName"));
+				sendText(login.password, map.get("Password"));
+				click(login.loginBtn);
+				
+				Assert.assertEquals("Not correct error message is displayed", map.get("ErrorMessage"), login.errorMsg.getText());
+			
+			}
+		}	
+	    
+	}
+
