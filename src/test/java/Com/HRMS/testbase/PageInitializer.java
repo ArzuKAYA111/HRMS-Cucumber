@@ -4,6 +4,7 @@ import Com.hrmsCucmbr.pages.AddEmployeePageElements;
 import Com.hrmsCucmbr.pages.DashBoardPageElements;
 import Com.hrmsCucmbr.pages.LoginPageElements;
 import Com.hrmsCucmbr.pages.PersonalDetailsPageElements;
+import Com.hrmsCucmbr.pages.SauceDemoLoginPage;
 import Com.hrmsCucmbr.pages.contactDetailsPageElements;
 import Com.hrmsCucmbr.pages.viewEmployeeListPageElements;
 
@@ -15,7 +16,7 @@ public class PageInitializer extends BaseClass {
 	public static PersonalDetailsPageElements pdetails;
     public static viewEmployeeListPageElements viewEmp ;
     public static contactDetailsPageElements contDetail;
-
+    public static SauceDemoLoginPage sauceLogin;
 	public static void initialize() {
 	 login=new LoginPageElements();
 	 dashboard=new DashBoardPageElements();     //we are calling the constructor of page calsses
@@ -23,7 +24,7 @@ public class PageInitializer extends BaseClass {
 	 pdetails= new PersonalDetailsPageElements();
 	 viewEmp=new viewEmployeeListPageElements();
 	 contDetail= new contactDetailsPageElements();
-	 
+	 sauceLogin=new SauceDemoLoginPage();
 	 
 	 
 	 

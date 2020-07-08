@@ -14,15 +14,15 @@ public class DashboaredSteps extends CommonMethods {
 
 @Then( "user see dashboard menu is displayed")	
 	public void user_see_dashboared_menu_is_displayed(DataTable dashboardMenu) {
-	click(login.loginBtn);
+	jsClick(login.loginBtn);
 	List<String> expectedMenu=dashboardMenu.asList();
 	
 	List<String> actualMenu=new ArrayList<>();
 	
-for(WebElement el:dashboard.dashMenu) {
+  for(WebElement el:dashboard.dashMenu) {
 	
 	actualMenu.add(el.getText());
-	
+	//wait(2);
 }
 System.out.println(expectedMenu);	
 	System.out.println(actualMenu);

@@ -57,22 +57,22 @@ public  void employeeNameusernameDisplayed() {
 
 
 
-public void handlingTable(List<WebElement> rows ,List<WebElement> cols ) {
-	
-
-	for (int i = 1; i <= rows.size(); i++) {
-		for (int j = 1; j <= cols.size(); j++) {
-			WebElement cellData = driver.findElement(By.xpath("//div[contains(@class, 'su-table')]/table/tbody/tr[" + i + "]/td[" + j + "]"));
-			String cellDataText = cellData.getText();
-			//System.out.println(cellDataText);
-			
-			if(j == 2) {
-				System.out.println("colmnTwo.."+cellDataText);
-			}
-		}
-		System.out.println("....");
-	}
-	}
+//public void handlingTable(List<WebElement> rows ,List<WebElement> cols ) {
+//	
+//
+//	for (int i = 1; i <= rows.size(); i++) {
+//		for (int j = 1; j <= cols.size(); j++) {
+//			WebElement cellData = driver.findElement(By.xpath("//div[contains(@class, 'su-table')]/table/tbody/tr[" + i + "]/td[" + j + "]"));
+//			String cellDataText = cellData.getText();
+//			//System.out.println(cellDataText);
+//			
+//			if(j == 2) {
+//				System.out.println("colmnTwo.."+cellDataText);
+//			}
+//		}
+//		System.out.println("....");
+//	}
+//	}
 
 
 

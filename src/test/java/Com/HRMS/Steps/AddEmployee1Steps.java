@@ -21,8 +21,8 @@ public class AddEmployee1Steps extends CommonMethods {
 	// this method has hardcoded values
 	@When("user enters employees first name and last name")
 	public void user_enters_employees_first_name_and_last_name() {
-		sendText(addEmp.empfirstnme, "Jhames");
-		sendText(addEmp.lastnme, "Ssmith");
+		sendText(addEmp.empfirstnme, "sena");
+		sendText(addEmp.lastnme, "senlik");
 	}
 
 	// this method is enhanced method and parameter values are supplied from Featute File
@@ -41,7 +41,7 @@ public class AddEmployee1Steps extends CommonMethods {
 	@Then("employee is added successfully")
 	public void employee_is_added_successfully() {
 		String actual = pdetails.profilname.getText();
-		String expectedName = "Jhames Ssmith";
+		String expectedName = "sena senlik";
 		Assert.assertEquals(expectedName, actual);
 	}
 
@@ -64,7 +64,7 @@ public class AddEmployee1Steps extends CommonMethods {
 
 	@When("user enters login credentials")
 	public void user_enters_login_credentials() {
-		addEmp.createloginDetails("Jhames_Smiths_", "Jhames_123_@John_");  
+		addEmp.createloginDetails("sEna_Senn_", "Senaa_123_@Senlik_");  
 
 	}
 

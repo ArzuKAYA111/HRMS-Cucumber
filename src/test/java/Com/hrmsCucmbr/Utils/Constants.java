@@ -12,8 +12,8 @@ public static final int IMPLICIT_WAIT_TIME=10;
 
 public static final int EXPLICIT_WAIT_TIME=20;
 
-public static final String TESTDATA_FILEPATH=System.getProperty("user.dir") + "/src/test/resources/Excel/HRMSdata.xlsx";
-public static final String REPORT_FILEPATH=System.getProperty("user.dir")+ "/target/reporthtml-report/HRMS.html";
+public static final String TESTDATA_FILEPATH=System.getProperty("user.dir") + "/src/test/resources/ExcelData/ProjectData.xlsx";
+public static final String REPORT_FILEPATH=System.getProperty("user.dir")+ "/target/reporthtml-report/Project.html";
 
 public static final String SCREENSHOT_FILEPATH=System.getProperty("user.dir")+"/screenshot ";
 

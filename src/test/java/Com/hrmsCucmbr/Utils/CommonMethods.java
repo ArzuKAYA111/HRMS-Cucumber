@@ -420,6 +420,8 @@ try {
 	WaitForClickability(element);
 	element.click();
 	}
+		
+	
 	/**20-
 	 * 
 	 * @return js
@@ -436,6 +438,8 @@ try {
 	public static void  jsClick(WebElement element){
 		getJSObject().executeScript("arguments[0].click();", element);
 	}
+	
+
 	
 	/**22-
 	 * 

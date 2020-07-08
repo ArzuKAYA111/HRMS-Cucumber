@@ -15,17 +15,19 @@ import io.cucumber.junit.CucumberOptions;
 
 		glue = "Com/HRMS/Steps", // where we can find implementation code for gherkin steps?
 									// we specify just package
-		dryRun = true, // if set to true it will quickly scan that all gherkin steps have
-						// implementation code
-						// if set to true no actual execution will happen //false run actual file
-						// (implement yapilmislari cek ediyor)
+		dryRun = false, // if set to true it will quickly scan that all gherkin steps have implementation code
+		
+						// if set to true no actual execution will happen it gaves only un implement steps in console 
+		                //if set false  false run actual file all implementaion 
+						
+		                // (implement yapilmislari cek ediyor)
 						// true scan all feature (hepsini cek ediyor implement yapilmamisi gerekenleri
 						// rapor ediyor code structor cikariyor)
 		monochrome = true, // it makes the console more understandable ( try run with out monochrome nad
 							// with monochrome to understand it)
 		 strict=true , //if we have unimplemented step, strict do not allow it to run
 		// //we can use or not use depends on us
-		tags ="@report",
+		tags ="@regression",
 
                           // we can write different way tags to execute our feature file/ scenarios etc.
                           // for example "@smoke or @regression we can write like that what means execute
@@ -36,7 +38,8 @@ import io.cucumber.junit.CucumberOptions;
 		plugin= {
 				"pretty",// prints gherkin steps in console
 				"html:target/cucumber-default-report",// create basic html report on specified location
-		         "json:target/cucumber.json"
+		         "json:target/cucumber.json",
+		         "rerun:target/failed.txt"   //   to re run only failed  test scenarios 
 		
 		
 		}

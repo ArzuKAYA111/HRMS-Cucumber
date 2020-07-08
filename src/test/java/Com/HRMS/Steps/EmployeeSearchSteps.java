@@ -3,6 +3,7 @@ import org.junit.Assert;
 
 import Com.hrmsCucmbr.Utils.CommonMethods;
 import Com.hrmsCucmbr.Utils.ConfigsReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -50,7 +51,7 @@ public class EmployeeSearchSteps extends CommonMethods{
 //		sendText(login.password, ConfigsReader.getProperty("password"));	
 //		click(login.loginBtn);	
 //}
-//	@Given("User navigate to employee list page")
+//	@And("user navigate to employee list page")
 //	public void user_navigate_to_employee_list_page() {
 //	   jsClick(dashboard.PIM);
 //	   wait(2);

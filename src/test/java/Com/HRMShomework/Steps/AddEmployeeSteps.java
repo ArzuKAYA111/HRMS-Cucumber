@@ -1,3 +1,4 @@
+package Com.HRMShomework.Steps;
 //package Com.HRMS.Steps;
 //
 //import org.junit.Assert;
@@ -8,7 +9,7 @@
 //import io.cucumber.java.en.When;
 //
 //public class AddEmployeeSteps extends CommonMethods{
-	
+//	
 //	@Given("user logged in into HRMS")
 //	public void user_logged_in_into_HRMS() {
 //	   

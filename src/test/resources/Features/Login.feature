@@ -3,7 +3,7 @@ Feature: Login
 
     #Enhancing test with Scenario Outline
      
-    @report
+    @smoke
   Scenario Outline: valid admin and ess login
     When user enter valid "<Username>" and "<Password>"
     And user click on login button
