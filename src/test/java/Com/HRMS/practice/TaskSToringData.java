@@ -38,9 +38,14 @@ public class TaskSToringData {
 	    while(rs.next()){
 			   mapData=new LinkedHashMap<>();
 			   for (int i=1 ;i<=rsMetaData.getColumnCount();i++) {
-				   mapData.put(rsMetaData.getColumnName(i),rs.getObject(i).toString() ); 
-				   System.out.println(mapData);  
-				   
+				if(rsMetaData.getColumnName(i).equalsIgnoreCase("id")) {
+					mapData.put("Nationality id",rs.getObject(i).toString() );  
+				}else if(rsMetaData.getColumnName(i).equalsIgnoreCase("name")) {
+	
+					mapData.put("Nationality ",rs.getObject(i).toString() );   
+				}
+						
+				//System.out.println(mapData);	// for one by one 	print
 			   }
 			   
 			  listData.add(mapData); //Storing our map inside our list

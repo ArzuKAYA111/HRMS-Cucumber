@@ -1,8 +1,10 @@
 package Com.HRMS.Steps;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 import Com.hrmsCucmbr.Utils.CommonMethods;
 import Com.hrmsCucmbr.Utils.ConfigsReader;
+import Com.hrmsCucmbr.Utils.GlobalVariables;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,7 +23,16 @@ public class EmployeeSearchSteps extends CommonMethods{
 	public void user_enters_valid_employee_id() {
 		sendText(viewEmp.EmpID, "10079");
 	}
-
+	//for  SQL Name validation against DB
+		@Given("admin searches employee by ID {string}")
+		public void admin_searches_employee_by_ID(String string) {
+			viewEmp.EmpID.sendKeys(string,Keys.ENTER);
+			GlobalVariables.empID=string;
+			
+			wait(3);
+			
+			jsClick(viewEmp.serchBtn);
+		}
 	@When("click on search button")
 	public void click_on_search_button() {
 		jsClick(viewEmp.serchBtn);
@@ -36,6 +47,24 @@ public class EmployeeSearchSteps extends CommonMethods{
 	@When("user enters valid employee name and last name")
 	public void user_enters_valid_employee_name_and_last_name() {
 		
+	}
+	
+	//for  SQL Name validation against DB
+	@When("verify table is displayed")
+	public void verify_table_is_displayed() {
+	    Assert.assertEquals(true, viewEmp.isTableDisplayed());
+	}
+	//for  SQL Name validation against DB
+	@Then("get first name from table")
+	public void get_first_name_from_table() {
+	  System.out.println(viewEmp.getFirstNameFromTable());  
+		
+	}
+	
+	//for  SQL Name validation against DB
+	@Then("validate first name from ui against db")
+	public void validate_first_name_from_ui_against_db() {
+	   Assert.assertEquals(DBSteps.dbData,viewEmp.getFirstNameFromTable());
 	}
 
 	}

@@ -27,6 +27,7 @@ import io.cucumber.junit.CucumberOptions;
 							// with monochrome to understand it)
 		 strict=true , //if we have unimplemented step, strict do not allow it to run
 		// //we can use or not use depends on us
+//		tags ="@firstname",
 		tags ="@lastName",
 
                           // we can write different way tags to execute our feature file/ scenarios etc.
@@ -47,6 +48,6 @@ import io.cucumber.junit.CucumberOptions;
 		
 		)
 
-public class RegressionRunner {
+public class Sqlrunner {
 
 }

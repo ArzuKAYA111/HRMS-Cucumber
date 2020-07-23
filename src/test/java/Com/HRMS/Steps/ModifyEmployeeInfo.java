@@ -20,15 +20,16 @@ public class ModifyEmployeeInfo extends CommonMethods {
 	@When("admin navigate to Employee Information page")
 	public void admin_navigate_to_Employee_Information_page() {
 		dashboard.navigateToEmployeeList();
-		wait(2);
+		wait(3);
 	}
 	@Given("admin searches employee by full name {string}")
 	public void admin_searches_employee_by_full_name(String string) {
 		viewEmp.EmpName.sendKeys(string,Keys.ENTER);
-		wait(2);
+		wait(3);
 		
 		jsClick(viewEmp.serchBtn);
 	}
+	
 	@Given("admin select employee from the list")
 	public void admin_select_employee_from_the_list() {
 	   jsClick(viewEmp.userName);
@@ -39,64 +40,64 @@ public class ModifyEmployeeInfo extends CommonMethods {
 		wait(2);	
 	}	
       	// first Way
-	@Then("admin add new information and save")
-	public void admin_add_new_information_and_save(DataTable userInfo) {
-	    
-	List<Map<String,String>> data = userInfo.asMaps(String.class,String.class);
-		
-	sendText(pdetails.empOtherId,data.get(0).get("OtherId"));
-	sendText(pdetails.dateofBirthLine,data.get(0).get("DateOfBirth"));	
-	sendText(pdetails.miltaryserv,data.get(0).get("MilitaryService"));
-	sendText(pdetails.nickname,data.get(0).get("NickName"));
-	sendText(pdetails.SSNno,data.get(0).get("ssnNo"));
-	sendText(pdetails.SINno,data.get(0).get("SinNo"));
-	
-	pdetails.selectInfo("Married" ,"Turkish" );
-	wait(2);
-	pdetails.ChangeLicExpDate("Jun","20","2021");
-	wait(5);
-	pdetails.SmokerCheckbox.click();
-	pdetails.EditSaveBtn.click();
-	wait(2);	
-	}
-	@Given("admin searches employee by ID {string}")
-	public void admin_searches_employee_by_ID(String string) {
-		viewEmp.EmpID.sendKeys(string,Keys.ENTER);
-		wait(2);
-	jsClick(viewEmp.serchBtn); 
-}
-	// second way 	
-	
 //	@Then("admin add new information and save")
 //	public void admin_add_new_information_and_save(DataTable userInfo) {
-//	
-//		List<Map<String, String>> modifyEmployeeList=dataTable.asMaps();
+//	    
+//	List<Map<String,String>> data = userInfo.asMaps(String.class,String.class);
 //		
-//		for(Map<String, String> data:modifyEmployeeList) {
-//			String Oid=data.get("OtherId");
-//			String datebirth=data.get("DateOfBirth");
-//			String nickN=data.get("NickName");
-//			String MilServ=data.get("MilitaryService");
-//			String ssnNo=data.get("ssnNo");
-//			String SINno=data.get("SinNo");
-//			
-//			
-//			sendText(pdetails.empOtherId, Oid);
-//			sendText(pdetails.dateofBirthLine, datebirth);
-//			sendText(pdetails.nickname, nickN);
-//			sendText(pdetails.miltaryserv, MilServ);
-//			sendText(addEmp.midlname, ssnNo);
-//			sendText(pdetails.SINno, SINno);
-//			click(addEmp.BtnSave);
+//	sendText(pdetails.empOtherId,data.get(0).get("OtherId"));
+//	sendText(pdetails.dateofBirthLine,data.get(0).get("DateOfBirth"));	
+//	sendText(pdetails.miltaryserv,data.get(0).get("MilitaryService"));
+//	sendText(pdetails.nickname,data.get(0).get("NickName"));
+//	sendText(pdetails.SSNno,data.get(0).get("ssnNo"));
+//	sendText(pdetails.SINno,data.get(0).get("SinNo"));
 //	
-//	
+//	pdetails.selectInfo("Married" ,"Turkish" );
+//	wait(2);
+//	pdetails.ChangeLicExpDate("Jun","20","2021");
+//	wait(5);
+//	pdetails.SmokerCheckbox.click();
+//	pdetails.EditSaveBtn.click();
+//	wait(2);	
+//	}
+//	@Given("admin searches employee by ID {string}")
+//	public void admin_searches_employee_by_ID(String string) {
+//		viewEmp.EmpID.sendKeys(string,Keys.ENTER);
+//		wait(2);
+//	jsClick(viewEmp.serchBtn); 
+//}
+	// second way 	
+	
+	@Then("admin add new information and save")
+	public void admin_add_new_information_and_save(DataTable userInfo) {
+	
+		List<Map<String, String>> modifyEmployeeList=userInfo.asMaps();
+		
+		for(Map<String, String> data:modifyEmployeeList) {
+			String Oid=data.get("OtherId");
+			String datebirth=data.get("DateOfBirth");
+			String nickN=data.get("NickName");
+			String MilServ=data.get("MilitaryService");
+			String ssnNo=data.get("ssnNo");
+			String SINno=data.get("SinNo");
+			
+			
+			sendText(pdetails.empOtherId, Oid);
+			sendText(pdetails.dateofBirthLine, datebirth);
+			sendText(pdetails.nickname, nickN);
+			sendText(pdetails.miltaryserv, MilServ);
+			sendText(pdetails.SSNno, ssnNo);
+			sendText(pdetails.SINno, SINno);
+			click(addEmp.BtnSave);
 	
 	
 	
 	
-
 	
-}
+	
+		}
+	
+}}
 
 
 

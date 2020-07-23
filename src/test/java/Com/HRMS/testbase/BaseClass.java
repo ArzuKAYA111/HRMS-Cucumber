@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import Com.hrmsCucmbr.Utils.ConfigsReader;
@@ -21,12 +22,24 @@ public class BaseClass { // Create testClass In different Package to see if we t
 
 		System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "true");
          ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
-		switch (ConfigsReader.getProperty("browser").toLowerCase()) {
-
+        
+         String headless=ConfigsReader.getProperty("headless"); // we add ' headless =true ' in config
+        
+         switch (ConfigsReader.getProperty("browser").toLowerCase()) {
 		case "chrome":
 
 			WebDriverManager.chromedriver().setup();
-
+			ChromeOptions cOptions=new ChromeOptions();
+			
+			if(headless.equalsIgnoreCase("true")){        //   we add this cOption parts for using Jenkins 
+			cOptions.setHeadless(true);
+			driver=new ChromeDriver(cOptions);
+			
+			}else{                      
+				driver=new ChromeDriver(cOptions);// bunu buraya koyduktan sonra browser acilmadan code calisiyor test yaparken 
+			                                     // This is ChromeBrowser Headless mode 
+				                                 // we can write like cOptions codes for other repositories instead of ChromeOptions cOptions=new ChromeOptions(); we will use 
+	}                                           //FirefoxOptions fOptions=new FirefoxOptions(); sonradan tamamla
 			driver = new ChromeDriver();
 			break;
 

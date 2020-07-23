@@ -16,10 +16,10 @@ Feature: Modify personal Detail
       | OtherId   | DateOfBirth | NickName | MilitaryService | ssnNo     | SinNo   |
       | 239483720 | 1996-Jun-27 | gulec    | Marine Corps    | 745234986 | 456*789 |
 
-  Scenario: Modify personal Detail
-    Given admin searches employee by ID "11390"
-    And admin select employee from the list
-    And admin navigate to Personal Deatils page and click to Edit
-    Then admin add new information and save
-      | OtherId   | DateOfBirth | NickName | MilitaryService | ssnNo     | SinNo   |
-      | 239483720 | 1996-Jun-27 | Gulec    | Marine Corps    | 745234986 | 456*789 |
+  #Scenario: Modify personal Detail
+    #Given admin searches employee by ID "11390"
+    #And admin select employee from the list
+    #And admin navigate to Personal Deatils page and click to Edit
+    #Then admin add new information and save
+      #| OtherId   | DateOfBirth | NickName | MilitaryService | ssnNo     | SinNo   |
+      #| 239483720 | 1996-Jun-27 | Gulec    | Marine Corps    | 745234986 | 456*789 |

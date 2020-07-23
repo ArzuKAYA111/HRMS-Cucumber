@@ -1,6 +1,9 @@
 package Com.hrmsCucmbr.pages;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -40,20 +43,115 @@ public List<WebElement > include;
 	@FindBy(xpath="//table[@id='resultTable']//td[3]/a")
 	public WebElement userName;
 
+	@FindBy(xpath="//table[@id='resultTable']")
+	public WebElement EmployeesTable;
 	
+	@FindBy(xpath="//table[@id='resultTable']//td[3]/a")
+	public WebElement tableFirstName;
+	
+	//for  SQL Name validation against DB
+	@FindBy(xpath="//table[@id='resultTable']//tbody//tr//td[3]")
+	public List<WebElement> tableFirstName_1; // bubu list yaptik cunku db table dan ismi list of map type return yapiyoruz 
+
+	
+	//for  SQL Name validation against DB
+	/**
+	 * this method will check if employee table is displayed
+	 * @return
+	 */
+	public boolean isTableDisplayed() {
+		return EmployeesTable.isDisplayed();
+	}
+	//for  SQL Name validation against DB
+	public List<Map<String,String>> getFirstNameFromTable(){
+		List<Map<String,String>> uiName=new ArrayList();
+				for( WebElement row:tableFirstName_1 ) {
+					Map<String,String> storeUiNames=new LinkedHashMap<>();
+					String tableName=row.getText();// if our employee has middle name we need to manipulate this code
+					 tableName=tableName.replaceAll("\\s.*","").trim(); // This will work for every employee
+					                                                   //replaceAll("\\s.*","").trim() It replaces everything with nothing after 1st space 
+					storeUiNames.put("emp_firstname", tableName);
+					uiName.add(storeUiNames);
+				}
+		return uiName;
+		}
+	
+	
+	//for  SQL Last Name validation against DB
+		@FindBy(xpath="//table[@id='resultTable']//tbody//tr//td[4]")
+		public List<WebElement> tableLastname; // bubu list yaptik cunku db table dan ismi list of map type return yapiyoruz 
+	
+		public List<Map<String,String>> getLastNameFromTable(){
+			List<Map<String,String>> uiLastname= new ArrayList<>();
+			for(WebElement row:tableLastname) {
+				Map<String,String> storeuiLastname= new LinkedHashMap<>();
+				String TableName =row.getText();
+				storeuiLastname.put("emp_lastname", TableName);
+				uiLastname.add(storeuiLastname);
+			}
+			
+			return uiLastname;
+	}
+	
+	
+	public void employeeIdIsDisplayed() {
+		System.out.println("The user ID is : "+ userid.isDisplayed());
+	}
 public	viewEmployeeListPageElements(){
 		
 	PageFactory.initElements(BaseClass.driver, this);
 	
-	}
 	
-public void employeeIdIsDisplayed() {
-	System.out.println("The user ID is : "+ userid.isDisplayed());
+
 }
 
 public  void employeeNameusernameDisplayed() {
 	System.out.println("The user NAME is : "+ userName.isDisplayed());
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
